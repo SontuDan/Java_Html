@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Login</h1>
+<form action="index" th:method="post">
+
+
+    <li>
+        <label for="username"></label>
+        <input type="text" class="inputFields" id="username" name="userName" placeholder="Username" value=""  required/>
+    </li>
+    <li>
+        <label for="password"></label>
+        <input type="password" class="inputFields" id="password" name="passWord" placeholder="Password" value="" required/>
+    </li>
+    <li>
+        <label for="email"></label>
+        <input type="email" class="inputFields" id="email" name="userEmail" placeholder="Email" value="" required/>
+    </li>
+    <li id="center-btn">
+        <input type="submit" value="Submit" />
+        <input type="reset"  value="Reset" /></p>
+    </li>
+    <p>
+
+</form>
+</body>
+</html>
