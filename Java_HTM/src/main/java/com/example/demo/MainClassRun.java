@@ -1,11 +1,11 @@
 package com.example.demo;
 import java.sql.SQLException;
 
-import com.example.demo.java.classes.SQLConnection;
+import com.example.demo.project.classes.SQLConnection;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import static com.example.demo.java.classes.SQLQuery.showDataAutentification;
+import static com.example.demo.project.classes.SQLQuery.showDataAutentification;
 
 @SpringBootApplication
 public class MainClassRun {

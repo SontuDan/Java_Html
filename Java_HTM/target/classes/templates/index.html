@@ -1,35 +1,123 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
+    <style>
+       @import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #111;
+  background-repeat: no-repeat;
+}
+
+.signupSection {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 450px;
+  text-align: center;
+  display: flex;
+  color: white;
+  box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+}
+
+
+
+.signupForm {
+  width: 100%;
+  padding: 30px 0;
+  background: rgba(20, 40, 40, .8);
+  transition: .2s;
+
+}
+
+.inputFields {
+  margin: 15px 0;
+  font-size: 16px;
+  padding: 10px;
+  width: 250px;
+  border: 1px solid rgba(10, 180, 180, 1);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: rgba(20, 20, 20, .2);
+  color: white;
+  outline: none;
+}
+
+
+.noBullet {
+  list-style-type: none;
+  padding: 0;
+}
+
+#submit-btn {
+  border: 1px solid rgba(10, 180, 180, 1);
+  background: rgba(20, 20, 20, .6);
+  font-size: 16px;
+  color: white;
+  margin-top: 5px;
+
+  cursor: pointer;
+  transition: .4s;
+    background: rgba(20, 20, 20, .8);
+    padding: 5px 10px;
+
+}
+#reset-btn {
+  border: 1px solid rgba(10, 180, 180, 1);
+  background: rgba(20, 20, 20, .6);
+  font-size: 16px;
+  color: white;
+  margin-top: 5px;
+  padding: 5px 5px;
+  cursor: pointer;
+  transition: .4s;
+    background: rgba(20, 20, 20, .8);
+    padding: 5px 15px;
+
+}
+
+    </style>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-<h1>Login</h1>
-<form action="index" th:method="post">
 
+<div class="signupSection">
 
-    <li>
-        <label for="username"></label>
-        <input type="text" class="inputFields" id="username" name="userName" placeholder="Username" value=""  required/>
-    </li>
-    <li>
-        <label for="password"></label>
-        <input type="password" class="inputFields" id="password" name="passWord" placeholder="Password" value="" required/>
-    </li>
-    <li>
-        <label for="email"></label>
-        <input type="email" class="inputFields" id="email" name="userEmail" placeholder="Email" value="" required/>
-    </li>
-    <li id="center-btn">
-        <input type="submit" value="Submit" />
-        <input type="reset"  value="Reset" /></p>
-    </li>
-    <p>
+    <form  class="signupForm" name="signupform" action="index" th:method="post">
+        <h2>Sign Up</h2>
+        <ul class="noBullet">
+            <li>
+                <label for="username"></label>
+                <input type="text" class="inputFields" id="username" name="userName" placeholder="Username" value="" oninput="return userNameValidation(this.value)" required/>
+            </li>
+            <li>
+                <label for="password"></label>
+                <input type="password" class="inputFields" id="password" name="passWord" placeholder="Password" value="" oninput="return passwordValidation(this.value)" required/>
+            </li>
+            <li>
+                <label for="email"></label>
+                <input type="email" class="inputFields" id="email" name="userEmail" placeholder="Email" value="" required/>
+            </li>
+            <li id="center-btn">
+                <input type="submit" id="submit-btn" name="submit" alt="Submit" value="Submit">
+                <input type="reset" id="reset-btn" name="reset" alt="Reset"value="Reset"/></p>
 
-</form>
+            </li>
+        </ul>
+    </form>
+</div>
 </body>
 </html>
