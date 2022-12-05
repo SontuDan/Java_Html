@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+
+<head>
+    <style>
+        body {
+            background: rgb(78, 0, 113);
+            background: linear-gradient(90deg, rgba(78, 0, 113, 1) 0%, rgba(0, 127, 153, 1) 100%);
+            font-family: "Arial", sans-serif;
+            padding: 10px;
+        }
+
+        .table {
+            margin: 30px auto;
+            padding: 10px;
+            width: 400px;
+            height: 400px;
+       
+            border-radius: 5px;
+        }
+
+        .styled-table {
+            border-radius: 5px;
+            text-align: center;
+            background-color: #fff;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .styled-table thead tr {
+            text-align: center;
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .styled-table th,
+        .styled-table td {
+            text-align: center;
+            padding: 12px 15px;
+        }
+
+        .upperPanel {
+
+            padding-top: 15px;
+            width: 100%;
+            height: 50px;
+            background-color: rgb(117, 179, 145);
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        p {
+            color: rgb(193, 255, 203);
+            font-size: 20px;
+            margin: auto auto;
+            text-align: center;
+            padding: 0px 16px;
+        }
+
+        .pass-link {
+            text-align: center;
+        }
+
+        .pass-link a:link,
+        .pass-link a:visited {
+            font-size: 12px;
+            color: rgb(255, 255, 255);
+        }
+    </style>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <div class="upperPanel">
+        <p>This user exists in our [ Database ]
+        <div class="pass-link">
+            <a href="http://localhost:8080">Click, to go back!</a>
+        </div>
+        </p>
+    </div>
+
+    <div class="table">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="human: ${humans}">
+                    <td th:text="${human.username}"></td>
+                    <td th:text="${human.password}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- <div class="container">
+        <h1 style="text-align: center;">User Exists!</h1>
+        <p> <input type="submit" class="btn" th:value="${human}" />
+            <input type="reset"  class="btn"  th:value="${humanpass}"/>
+        </p>
+    </div> -->
+
+</body>
+
+</html>
